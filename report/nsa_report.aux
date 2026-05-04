@@ -1,0 +1,75 @@
+\relax 
+\providecommand\zref@newlabel[2]{}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{beltagy2020longformer}
+\citation{kitaev2020reformer}
+\citation{zaheer2020bigbird}
+\citation{child2019generating}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The hardware-alignment problem.}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{NSA's design philosophy.}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This report.}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}NSA Architecture}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Three-Branch Design}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Branch Details}{1}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Compression branch.}{1}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Selection branch.}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sliding window branch.}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Complexity Analysis}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Complexity comparison.} $n$: sequence length, $d$: head dim, $S$: selected blocks, $B_s$: block size, $W$: window size, $H$: num heads.}}{2}{table.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:complexity}{{1}{2}{\textbf {Complexity comparison.} $n$: sequence length, $d$: head dim, $S$: selected blocks, $B_s$: block size, $W$: window size, $H$: num heads}{table.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Arithmetic Intensity}{2}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Arithmetic Intensity \& GPU Speedup}{2}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}NSA Kernel vs.\ FlashAttention}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Why FlashAttention's tiling strategy fails for sparse selection.}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{NSA's solution: group-centric loading.}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Experimental Protocol}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Measured GPU Speedup}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Measured latency on A100 (BF16).} \emph  {Left}: forward pass — NSA breaks even at $n \approx 6$k, reaches \textbf  {8.3$\times $} at 64k. \emph  {Center}: backward pass — breakeven at $n \approx 14$k, \textbf  {3.4$\times $} at 64k. \emph  {Right}: speedup ratio vs.\ sequence length (log scale).}}{3}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:timing}{{1}{3}{\textbf {Measured latency on A100 (BF16).} \emph {Left}: forward pass — NSA breaks even at $n \approx 6$k, reaches \textbf {8.3$\times $} at 64k. \emph {Center}: backward pass — breakeven at $n \approx 14$k, \textbf {3.4$\times $} at 64k. \emph {Right}: speedup ratio vs.\ sequence length (log scale)}{figure.caption.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Measured latency and speedup} on A100-SXM4-40GB (BF16).}}{3}{table.caption.3}\protected@file@percent }
+\newlabel{tab:speedup}{{2}{3}{\textbf {Measured latency and speedup} on A100-SXM4-40GB (BF16)}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Roofline Analysis}{3}{subsection.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Roofline model} (A100 BF16, ridge point $= 38.8$\,FLOP/byte). Both NSA and dense operate in the compute-bound regime at large $n$. NSA achieves the same output with $\sim $6$\times $ fewer FLOPs, directly translating to the measured speedup.}}{3}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:roofline}{{2}{3}{\textbf {Roofline model} (A100 BF16, ridge point $= 38.8$\,FLOP/byte). Both NSA and dense operate in the compute-bound regime at large $n$. NSA achieves the same output with $\sim $6$\times $ fewer FLOPs, directly translating to the measured speedup}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Memory Footprint}{3}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}End-to-End NIAH: NSA vs.\ Dense vs.\ Sliding Window}{3}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Motivation and Research Question}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Benchmark: NIAH en Français — ``Que fait Mathieu\,?''}{3}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Task.}{3}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Model Architecture}{3}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Results}{3}{subsection.4.4}\protected@file@percent }
+\citation{merity2016pointer}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Model specifications.} All three models share the same architecture and hyperparameters; only the attention layer differs.}}{4}{table.caption.5}\protected@file@percent }
+\newlabel{tab:arch}{{3}{4}{\textbf {Model specifications.} All three models share the same architecture and hyperparameters; only the attention layer differs}{table.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Recall vs.\ relative needle position} for each context length. \textcolor {nsa_green}{\textbf  {NSA}} maintains near-perfect recall uniformly across positions. \textcolor {nsa_blue}{\textbf  {Dense}} achieves moderate recall independently of position (the retrieval difficulty is position-agnostic, reflecting the uniform filler haystack). \textcolor {nsa_red}{\textbf  {SW}} fails everywhere except in the shaded orange zone (last $W=32$ tokens before the query), where recall recovers — confirming that SW's \emph  {only} viable retrieval mechanism is proximity.}}{4}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:niah_recall_pos}{{3}{4}{\textbf {Recall vs.\ relative needle position} for each context length. \textcolor {nsa_green}{\textbf {NSA}} maintains near-perfect recall uniformly across positions. \textcolor {nsa_blue}{\textbf {Dense}} achieves moderate recall independently of position (the retrieval difficulty is position-agnostic, reflecting the uniform filler haystack). \textcolor {nsa_red}{\textbf {SW}} fails everywhere except in the shaded orange zone (last $W=32$ tokens before the query), where recall recovers — confirming that SW's \emph {only} viable retrieval mechanism is proximity}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Analysis}{4}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{NSA outperforms Dense (97.6\% vs.\ 52.9\%) despite less expressivity.}{4}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Phase transition at epoch $\sim $30 vs.\ Dense at epoch $\sim $105.}{4}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SW overfits catastrophically (train 70\%, eval 5.9\%).}{4}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Connection to the Full NSA Model}{4}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Reproduction notes.}{4}{subsection.4.6}\protected@file@percent }
+\bibcite{nsa2025}{1}
+\bibcite{beltagy2020longformer}{2}
+\bibcite{zaheer2020bigbird}{3}
+\bibcite{child2019generating}{4}
+\bibcite{kitaev2020reformer}{5}
+\bibcite{dao2022flashattention}{6}
+\bibcite{ainslie2023gqa}{7}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Language Modeling on WikiText-2}{5}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Results}{5}{subsection.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Experiment~1: training and validation loss for Full Attention vs.\ NSA (All) ($D=384$, $T=1{,}024$, 2\,048 steps). The two curves are nearly indistinguishable throughout training, confirming that NSA matches full-attention quality on language modeling.}}{5}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:wiki1}{{4}{5}{Experiment~1: training and validation loss for Full Attention vs.\^^MNSA (All) ($D=384$, $T=1{,}024$, 2\,048 steps). The two curves are nearly indistinguishable throughout training, confirming that NSA matches full-attention quality on language modeling}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Experiment~2: validation loss ablation over the three NSA branches ($D=256$, $T=256$, 384 steps). All five models converge to similar validation loss. NSA Compression alone lags slightly; Sliding and Selection are near Full Attention; combining all three is competitive with — and slightly better than — full attention.}}{5}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:wiki2}{{5}{5}{Experiment~2: validation loss ablation over the three NSA branches ($D=256$, $T=256$, 384 steps). All five models converge to similar validation loss. NSA Compression alone lags slightly; Sliding and Selection are near Full Attention; combining all three is competitive with — and slightly better than — full attention}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{NSA matches full attention on language modeling.}{5}{figure.caption.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion \& Conclusion}{5}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Summary of Reproduced Claims}{5}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Limitations}{5}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Broader Implications}{5}{subsection.6.3}\protected@file@percent }
+\bibcite{merity2016pointer}{8}
+\gdef \@abspage@last{6}
